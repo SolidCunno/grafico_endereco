@@ -2,13 +2,13 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Lendo o arquivo Excel
+
 df = pd.read_excel('Cadastro_de_Clientes_geral.xlsx')
 
-# Corrigindo os erros de escrita na coluna "Serviço Desejado"
+
 df['Serviço Desejado'] = df['Serviço Desejado'].replace(['clinico', 'clínico'], 'Clínico')
 
-# Filtrando os clientes que optaram por "Clínico"
+
 df_clinico = df.loc[df['Serviço Desejado'] == 'Clínico']
 
 # Criando um gráfico de barras da contagem de clientes por região para o serviço "Clínico"
